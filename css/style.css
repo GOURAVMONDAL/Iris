@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+  }
+
 body {
     font-family: 'Roc Grotesk';
     padding: 0px;
@@ -22,6 +26,7 @@ body {
     padding: 40px;
     position: fixed;
     width: 95%;
+    transition: .5s;
 }
 
 .nav-logo {
@@ -36,6 +41,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .menu-line {
@@ -71,6 +77,76 @@ body {
     display: none;
 }
 
+.navbg {
+    background-color: #021E42;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+label.menu::before {
+    content:"";
+    width:80px;
+    height:80px;
+    border-radius:100px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    transition: .5s;
+}
+
+input.checkbox:checked + label.menu::before {
+    transform:scale(20);
+}
+
+input.checkbox:checked + label.menu .menu-line {
+    background-color: transparent;
+    
+    
+}
+input.checkbox:checked + label.menu .menu-line::before {
+    top:0;
+    transform: rotate(45deg);
+    transition:.5s;
+}
+input.checkbox:checked + label.menu .menu-line::after {
+    top:0;
+    transform: rotate(-45deg);
+    transition:.5s;
+}
+
+
+.navbar-right {
+    position: relative;
+}
+
+.navbar-items {
+    position: absolute;
+    top: 50%;
+    right: -300px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: 1s;
+}
+
+.navbar-link {
+    font-size:30px;
+    font-weight: 700;
+    color:#000;
+    text-decoration: none;
+    display: inline-block;
+    padding:10px;
+    margin:10px;
+}
+
+input.checkbox:checked + .menu + .navbar-items {
+    display: flex;
+    opacity: 1;
+    top: 50%;
+    right: 300px;
+} 
 
 /* ====================HERO SECTION==================== */
 
@@ -83,8 +159,6 @@ body {
     display: flex;
     align-items: center;
 }
-
-
 
 .hero-heading-primary {
     width: 90%;
@@ -114,6 +188,9 @@ body {
     color: #fff;
     text-transform: uppercase;
     transition: .5s;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
 }
 
 .btn-primary:hover {
@@ -260,6 +337,7 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     margin-bottom: 30px;
+    text-decoration: none;
 }
 
 .whatwedo-box1 img {
@@ -276,34 +354,66 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     margin-bottom: 30px;
+    text-decoration: none;
+    
+}
+
+.whatwedo-box1:hover h3::before {
+    width:100%;
+}
+
+.whatwedo-box2:hover h3::before {
+    width:100%;
 }
 
 .whatwedo-box-heading {
     font-size:20px;
     font-weight:500;
+    transition: .5s;
+    position: relative;
+    z-index: 2;
+}
+
+.whatwedo-box-heading::before {
+    content:"";
+    width:0%;
+    height: 100%;
+    background: #021E42;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    z-index: -1;
+    transition: .5s;
 }
 
 .bg1 {
     background:linear-gradient(to top, rgba(0,0,0,0.6),rgba(0,0,0,0.01)), url(../images/img1.jpg);
+    z-index: 0;
 }
 
 .bg2 {
     background:linear-gradient(to top, rgba(0,0,0,0.6),rgba(0,0,0,0.01)), url(../images/img2.jpg);
+    /* z-index: -5; */
 }
 
 .bg3 {
     background:linear-gradient(to top, rgba(0,0,0,0.6),rgba(0,0,0,0.01)), url(../images/img3.jpg);
+    /* z-index: -5; */
 }
 
 .bg4 {
     background:linear-gradient(to top, rgba(0,0,0,0.6),rgba(0,0,0,0.01)), url(../images/img4.jpg);
+    /* z-index: -5; */
 }
 
 .bg5 {
     background:linear-gradient(to top, rgba(0,0,0,0.6),rgba(0,0,0,0.01)), url(../images/img5.jpg);
+    /* z-index: -5; */
 }
 .bg6 {
     background:linear-gradient(to top, rgba(0,0,0,0.6),rgba(0,0,0,0.01)), url(../images/img6.jpg);
+    /* z-index: -5; */
 }
 
 .whatwedo-box-heading {
@@ -518,8 +628,9 @@ body::-webkit-scrollbar-thumb {
     padding:0 80px
 }
 
-.contact-right-content > p {
+.contact-right-content > a {
     margin-bottom: 30px;
+    color: #000;
 }
 
 .contact-address,
@@ -586,10 +697,15 @@ body::-webkit-scrollbar-thumb {
 .footer-upper {
     display: flex;
     justify-content: space-between;
+    column-gap: 100px;
 }
 
 .footer-upper-left img {
     height: 30px;
+}
+
+.footer-links {
+    display: flex;
 }
 
 .footer-links a{
@@ -603,9 +719,14 @@ body::-webkit-scrollbar-thumb {
     text-transform: capitalize;
 }
 
+.footer-links a:hover {
+    color:#d2d2d2;
+}
+
 .footer-upper-right {
     display: flex;
     justify-content: space-between;
+    width: 50%;
 }
 
 .footer-upper-right div {
@@ -621,6 +742,9 @@ body::-webkit-scrollbar-thumb {
 .contact-number {
     margin:0px;
     margin-bottom: 10px;
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
 }
 
 .footer-lower {
