@@ -314,3 +314,149 @@ body {
     margin: 0px;
 }
 
+/* ====================BLOGS SECTION==================== */
+
+.blogs {
+    margin:200px 0px;
+}
+
+.blogs-content {
+    display: flex;
+}
+
+.blogs-heading-primary {
+    font-size:48px;
+    text-transform: uppercase;
+    margin:0px;
+    line-height: 60px;
+
+}
+
+.blogs-left {
+    width:400px;
+    padding:200px;
+    margin-left: -200px;
+    background:url(../images/about-bg.svg);
+    background-size: contain;
+    background-repeat:no-repeat;
+    
+}
+
+.blogs-left img {
+    width:150px;
+}
+
+.blogs-right {
+    width:600px;
+    margin-left: -100px;
+    display: flex;
+    overflow-x: scroll;
+}
+
+.blogs-col {
+    width:300px;
+}
+
+.blogs-img img {
+    width: 100%;
+}
+
+.blogs-title {
+    margin:16px 0;
+    font-size: 24px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+}
+
+
+.blogs-txt {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp:5;
+    margin:0;
+}
+
+.blog-link {
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+    margin:16px 0;
+}
+
+.blogs-inner-container {
+    display: flex;
+    grid-column-gap: 30px;
+}
+
+/* ====================CUSTOMERS SECTION==================== */
+
+.customers {
+    background:#E9F4FC;
+    padding:100px 0;
+}
+
+.customers-heading-primary {
+    font-size:48px;
+    text-transform: uppercase;
+    margin:0px;
+    line-height: 60px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.customers-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.customers-logo {
+    width:120px;
+}
+
+.customers-logo img {
+    width: 100%;
+}
+
+/* ====================CONTACT US SECTION==================== */
+
+.contact {
+    padding: 140px 0;
+    background:#E9F4FC;
+}
+
+.contact-heading-primary {
+    font-size:48px;
+    text-transform: uppercase;
+    margin:0px;
+    line-height: 60px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* ====================NEWSLETTER SECTION==================== */
+
+.newsletter {
+    padding:100px 0;
+}
+
+/* ====================FOOTER==================== */
+
+.footer {
+    background:#021E42;
+    padding:100px 0px;
+    color:#fff;
+}
+
+
+
+
+
+
+
